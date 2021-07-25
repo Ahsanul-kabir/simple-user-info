@@ -1,5 +1,5 @@
 body{
-  background: tomato;
+  background: rgb(176, 228, 215);
 }
 
 .container{
@@ -43,4 +43,5 @@ body{
   cursor: pointer;
   font-size: 15px;
   font-weight: bold;
+  margin: auto
 }

@@ -3,7 +3,7 @@ import './App.css';
 import User, {UserInt} from './components/User';
 
 function App() {
-  
+
   interface AllUserInt {
     currentUser: UserInt
     allUsers: Array<UserInt>
@@ -18,7 +18,7 @@ function App() {
     allUsers: []
   })
   const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-    // console.log(e.target.value) 
+    // console.log(e.target.value)
     setUserState({
       ...userState,
       currentUser: {
@@ -52,7 +52,7 @@ const deleteHandler = (index: number) => {
     ...userState,
     allUsers: filerUsers
    })
-  
+
 }
 
   const allUsers = userState.allUsers.map((user, i) => (
@@ -68,15 +68,15 @@ const deleteHandler = (index: number) => {
   console.log(userState.currentUser)
   return (
     <div className="container">
-      <h1>React With Typescript Assignment</h1>
+      <h1>User Info NoteBook</h1>
       <h1>Add Users</h1>
       <form onSubmit={submitForm} className="card">
         <label htmlFor="name">Name:</label>
-        <input type="text" name="name" id="userName" value={userState.currentUser.name} onChange={onChangeHandler} required />
+        <input className="form-control" type="text" name="name" id="userName" value={userState.currentUser.name} onChange={onChangeHandler} required />
         <label htmlFor="job">Job:</label>
-        <input type="text" name="job" id="jobStatus" value={userState.currentUser.job} onChange={onChangeHandler} required />
+        <input className="form-control" type="text" name="job" id="jobStatus" value={userState.currentUser.job} onChange={onChangeHandler} required />
         <label htmlFor="age">Age:</label>
-        <input type="number" name="age" id="age" value={userState.currentUser.age} onChange={onChangeHandler} required />
+        <input className="form-control" type="number" name="age" id="age" value={userState.currentUser.age} onChange={onChangeHandler} required />
         <button className="addBtn">Add User</button>
       </form>
       {allUsers}
